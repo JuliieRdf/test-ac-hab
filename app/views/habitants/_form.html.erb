@@ -1,0 +1,42 @@
+<%= form_with(model: habitant) do |form| %>
+  <% if habitant.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(habitant.errors.count, "error") %> prohibited this habitant from being saved:</h2>
+
+      <ul>
+        <% habitant.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div>
+    <%= form.label :personality, style: "display: block" %>
+    <%= form.text_field :personality %>
+  </div>
+
+  <div>
+    <%= form.label :birthday, style: "display: block" %>
+    <%= form.text_field :birthday %>
+  </div>
+
+  <div>
+    <%= form.label :photo, style: "display: block" %>
+    <%= form.text_area :photo %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
